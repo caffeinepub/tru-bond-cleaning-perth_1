@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/assets/fonts/CabinetGrotesk-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/assets/fonts/BricolageGrotesque-Variable.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 10% 10%;
+
+    /* Teal brand palette */
+    --primary: 0.63 0.14 185;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.96 0.02 185;
+    --secondary-foreground: 0.25 0.06 185;
+
+    --muted: 0.96 0.01 185;
+    --muted-foreground: 0.5 0.05 185;
+
+    --accent: 0.85 0.12 185;
+    --accent-foreground: 0.2 0.08 185;
+
+    --card: 1 0 0;
+    --card-foreground: 0.15 0.05 185;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.05 185;
+
+    --border: 0.9 0.03 185;
+    --input: 0.9 0.03 185;
+    --ring: 0.63 0.14 185;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1 0 0;
+
+    --radius: 0.5rem;
+
+    /* Brand specific */
+    --brand-teal: 0.63 0.14 185;
+    --brand-teal-dark: 0.45 0.14 185;
+    --brand-teal-light: 0.85 0.10 185;
+    --brand-cream: 0.98 0.01 85;
+    --brand-dark: 0.18 0.04 240;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* WhatsApp button pulse */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.63 0.14 145 / 0.4); }
+  50% { box-shadow: 0 0 0 12px oklch(0.63 0.14 145 / 0); }
+}
+
+.whatsapp-btn {
+  animation: whatsapp-pulse 2s ease-in-out infinite;
+}
