@@ -1,3 +1,4 @@
+import SEOMeta from "@/components/SEOMeta";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
@@ -21,7 +22,8 @@ const services = [
     id: "general-bond-clean",
     title: "General Bond Clean Perth – The Complete End-of-Lease Solution",
     image: "/assets/generated/hero-bond-cleaning-perth.dim_1200x600.jpg",
-    imageAlt: "Professional bond cleaning team in Perth – Tru Bond Cleaning",
+    imageAlt:
+      "Professional bond cleaning team in Perth – Tru Bond Cleaning end of lease service",
     content: [
       {
         type: "para",
@@ -35,7 +37,7 @@ const services = [
       {
         type: "list",
         items: [
-          "Every room gets vacuumed and mopped",
+          "Every room vacuumed, mopped, and spot-cleaned",
           "Dust and cobwebs removed from ceilings, cornices, and light fittings",
           "Skirting boards, door frames, and window sills wiped down",
           "All windows cleaned inside, including tracks and frames",
@@ -51,13 +53,13 @@ const services = [
       },
       {
         type: "para",
-        text: "In Perth's competitive rental market, landlords and property managers hold high expectations. A missed mark on a wall, a dusty ceiling fan, or a grubby skirting board can cost you hundreds of dollars from your bond. Our team has cleaned hundreds of Perth rental properties and we know the common areas that inspectors focus on. We don't just clean the obvious spots — we get into every nook and cranny so your inspection goes smoothly.",
+        text: "In Perth's competitive rental market, landlords and property managers hold high expectations. A missed mark on a wall, a dusty ceiling fan, or a grubby skirting board can cost you hundreds of dollars from your bond. Our team has completed over 500 Perth rental property cleans and we know the areas inspectors focus on most.",
       },
       {
         type: "para",
         text: "Our cleaners arrive with all the equipment and professional-grade cleaning products they need. You don't need to provide a single thing — just hand us the keys and we'll take care of the rest. We work efficiently without cutting corners, and we're happy to work around your moving schedule, including weekends and same-day bookings.",
       },
-      { type: "heading", text: "Our Bond Back Guarantee:" },
+      { type: "heading", text: "Our 100% Bond Back Guarantee:" },
       {
         type: "para",
         text: "Every general bond clean at Tru Bond Cleaning Perth comes with our 100% bond back guarantee. If your property manager finds something we missed during the inspection, we'll come back and fix it within 72 hours at no extra cost. Your peace of mind is our priority.",
@@ -72,9 +74,9 @@ const services = [
     id: "kitchen-deep-clean",
     title:
       "Kitchen Deep Clean Perth – Grease, Grime, and Everything In Between",
-    image: "/assets/generated/kitchen-cleaning-perth.dim_800x500.jpg",
+    image: "/assets/generated/end-of-lease-cleaning-perth.dim_800x500.jpg",
     imageAlt:
-      "Professional kitchen bond cleaning service in Perth by Tru Bond Cleaning",
+      "End of lease cleaning Perth kitchen by Tru Bond Cleaning professionals",
     content: [
       {
         type: "para",
@@ -104,11 +106,19 @@ const services = [
       { type: "heading", text: "Why Our Kitchen Clean Stands Out:" },
       {
         type: "para",
-        text: "Many end-of-lease cleaners rush through the kitchen and miss key areas like the inside of the rangehood, behind the stovetop, or the rubber seal around the oven door. These are exactly the areas property managers check. Our team is trained to find and fix every greasy corner. We use commercial-strength degreasers that cut through years of built-up grease in minutes, leaving your kitchen looking and smelling brand new.",
+        text: "Many end-of-lease cleaners rush through the kitchen and miss key areas like the inside of the rangehood, behind the stovetop, or the rubber seal around the oven door. These are exactly the areas property managers check. Our team is trained to find and fix every greasy corner, using commercial-strength degreasers that cut through years of built-up grease in minutes.",
+      },
+      {
+        type: "heading",
+        text: "What Happens If I Try to Clean the Kitchen Myself?",
       },
       {
         type: "para",
-        text: "Whether you need just the kitchen done or a full property bond clean, Tru Bond Cleaning Perth has you covered. Contact us on WhatsApp or get a free quote online. We'll make your kitchen sparkle.",
+        text: "Most renters underestimate how long a kitchen deep clean takes. A professional kitchen clean can take 3–4 hours on a standard rental. Without the right products, tools, and training, DIY kitchen cleaning often results in a failed inspection and a bond deduction. Save time, save money, and get it done right the first time.",
+      },
+      {
+        type: "para",
+        text: "Whether you need just the kitchen done or a full property bond clean, Tru Bond Cleaning Perth has you covered. Contact us on WhatsApp or get a free quote online.",
       },
     ] as ContentBlock[],
   },
@@ -116,13 +126,13 @@ const services = [
     id: "bathroom-toilet-clean",
     title:
       "Bathroom & Toilet Cleaning Perth – Spotless, Sanitised, and Ready for Inspection",
-    image: "/assets/generated/bathroom-cleaning-perth.dim_800x500.jpg",
+    image: "/assets/generated/bond-clean-bathroom-perth.dim_800x500.jpg",
     imageAlt:
-      "Sparkling clean bathroom after Tru Bond Cleaning Perth bond clean",
+      "Spotless bathroom after professional bond clean in Perth by Tru Bond Cleaning",
     content: [
       {
         type: "para",
-        text: "Bathrooms are one of the most scrutinised rooms during a rental inspection. Soap scum on shower screens, mould on grout, limescale on taps, and stains in the toilet — these are the things that get renters' bonds docked. Regular cleaning can keep a bathroom tidy, but it takes a professional-grade clean to make it truly inspection-ready.",
+        text: "Bathrooms are one of the most scrutinised rooms during a rental inspection. Soap scum on shower screens, mould on grout, limescale on taps, and stains in the toilet are the things that get renters' bonds docked. Regular cleaning keeps a bathroom tidy, but it takes professional-grade cleaning to make it truly inspection-ready.",
       },
       {
         type: "para",
@@ -147,11 +157,12 @@ const services = [
           "Bathroom floor mopped with disinfectant solution",
         ],
       },
-      { type: "heading", text: "Tackling Mould and Limescale:" },
+      { type: "heading", text: "Tackling Perth's Hard Water and Mould:" },
       {
         type: "para",
-        text: "Perth's water has high mineral content, which causes limescale build-up on taps, shower screens, and tiles. Mould loves the warm, damp conditions in Perth bathrooms. These are two of the most common reasons property managers withhold bond money. Our team uses specialist descaling agents and mould-killing products to tackle both problems at the source. We don't just wipe over the surface — we treat the problem properly so your bathroom passes inspection with flying colours.",
+        text: "Perth's water has high mineral content, which causes limescale build-up on taps, shower screens, and tiles. Mould loves the warm, damp conditions in Perth bathrooms. These are two of the most common reasons property managers withhold bond money. Our team uses specialist descaling agents and mould-killing products to tackle both problems at the source.",
       },
+      { type: "heading", text: "All Bathrooms Covered in One Visit:" },
       {
         type: "para",
         text: "Most Perth rental homes have at least two bathrooms. Our team cleans all of them as part of our comprehensive bond clean package. Whether your home has an ensuite, a main bathroom, or a separate toilet, we cover every one.",
@@ -166,8 +177,9 @@ const services = [
     id: "carpet-steam-cleaning",
     title:
       "Carpet Steam Cleaning Perth – Deep Clean That Gets Right to the Roots",
-    image: "/assets/generated/carpet-cleaning-perth.dim_800x500.jpg",
-    imageAlt: "Professional carpet steam cleaning Perth – Tru Bond Cleaning",
+    image: "/assets/generated/carpet-steam-clean-perth.dim_800x500.jpg",
+    imageAlt:
+      "Professional carpet steam cleaning Perth – Tru Bond Cleaning end of lease service",
     content: [
       {
         type: "para",
@@ -188,18 +200,22 @@ const services = [
           "Steam cleaning machine run methodically across every carpeted area",
           "Cleaning solutions safe for all carpet types (wool, nylon, synthetic)",
           "High-powered extraction removes most moisture for faster drying",
-          "Odour treatment — great if you've had pets in the home",
+          "Odour treatment — essential if you've had pets in the home",
           "Proof of professional cleaning receipt provided",
         ],
       },
-      { type: "heading", text: "Why Perth Property Managers Require It:" },
       {
-        type: "para",
-        text: "Most Perth lease agreements specify that carpets must be professionally steam cleaned at the end of the tenancy — not just vacuumed. This is a common clause in REIWA lease agreements. If you don't have a receipt from a professional carpet cleaner, your property manager may withhold bond money to have it done themselves. Tru Bond Cleaning Perth always provides a receipt you can show to your property manager as proof of professional cleaning.",
+        type: "heading",
+        text: "Why Perth Property Managers Require Professional Carpet Cleaning:",
       },
       {
         type: "para",
-        text: "We treat common carpet stains including red wine, coffee, pet urine, mud, and food spills. While we can't guarantee every stain will disappear completely (some stains set permanently), our pre-treatment process gives the best possible chance of removal.",
+        text: "Most Perth lease agreements specify that carpets must be professionally steam cleaned at the end of the tenancy — not just vacuumed. This is a standard clause in REIWA lease agreements. If you don't have a receipt from a professional carpet cleaner, your property manager may withhold bond money to have it done themselves. Tru Bond Cleaning Perth always provides a receipt you can show as proof of professional cleaning.",
+      },
+      { type: "heading", text: "Stain Removal and Pet Odours:" },
+      {
+        type: "para",
+        text: "We treat common carpet stains including red wine, coffee, pet urine, mud, and food spills. Our pre-treatment process gives the best possible chance of removal. For pet odours, we use specialist enzyme-based treatments that neutralise odour at the source rather than just masking it.",
       },
       {
         type: "para",
@@ -210,8 +226,9 @@ const services = [
   {
     id: "window-cleaning",
     title: "Window Cleaning Perth – Crystal Clear Results, Inside and Out",
-    image: "/assets/generated/window-cleaning-perth.dim_800x500.jpg",
-    imageAlt: "Window cleaning service Perth – Tru Bond Cleaning end of lease",
+    image: "/assets/generated/window-bond-clean-perth.dim_800x500.jpg",
+    imageAlt:
+      "Professional window cleaning Perth as part of bond clean – Tru Bond Cleaning",
     content: [
       {
         type: "para",
@@ -236,14 +253,18 @@ const services = [
           "Sliding door tracks and glass panels cleaned",
         ],
       },
-      { type: "heading", text: "Dealing with Hard Water Stains:" },
       {
-        type: "para",
-        text: "Perth's hard water leaves mineral deposits on window glass that don't come off with regular spray-and-wipe cleaning. We use specialist hard water stain removers to tackle these stubborn marks and restore the glass to its original clarity. If left untreated, hard water stains can etch into glass permanently — so it's worth addressing them promptly.",
+        type: "heading",
+        text: "Dealing with Perth's Hard Water Stains on Glass:",
       },
       {
         type: "para",
-        text: "Real estate agents walk through a property looking at the overall impression. Clean windows let in more natural light, making the whole home feel brighter and better presented. Our professional window cleaning makes sure your property makes the best possible impression.",
+        text: "Perth's hard water leaves mineral deposits on window glass that don't come off with regular spray-and-wipe cleaning. We use specialist hard water stain removers to tackle these stubborn marks and restore the glass to its original clarity. If left untreated, hard water stains can etch into glass permanently.",
+      },
+      { type: "heading", text: "First Impressions Matter at Inspection:" },
+      {
+        type: "para",
+        text: "Real estate agents walk through a property looking at the overall impression. Clean windows let in more natural light, making the whole home feel brighter and better presented. Our professional window cleaning makes sure your property makes the best possible impression on inspection day.",
       },
       {
         type: "para",
@@ -254,9 +275,9 @@ const services = [
   {
     id: "oven-appliance-cleaning",
     title: "Oven & Appliance Cleaning Perth – The Dirtiest Job Done Right",
-    image: "/assets/generated/kitchen-cleaning-perth.dim_800x500.jpg",
+    image: "/assets/generated/oven-cleaning-perth.dim_800x500.jpg",
     imageAlt:
-      "Professional oven and appliance cleaning Perth by Tru Bond Cleaning",
+      "Professional oven cleaning Perth by Tru Bond Cleaning bond clean experts",
     content: [
       {
         type: "para",
@@ -276,7 +297,7 @@ const services = [
           "Oven completely disassembled — racks, trays, and door removed for soaking",
           "Oven cavity treated with commercial degreaser and scrubbed clean",
           "Oven glass polished streak-free, inside and out",
-          "Rubber door seal cleaned carefully",
+          "Rubber door seal carefully cleaned",
           "Stovetop burners, grates, and drip trays degreased and polished",
           "Rangehood filter removed, soaked, and scrubbed",
           "Rangehood interior and exterior degreased",
@@ -291,8 +312,9 @@ const services = [
       },
       {
         type: "para",
-        text: "Store-bought oven cleaners like Easy-Off are effective but require proper application time, protective equipment, and thorough rinsing. DIY oven cleaning often leaves a chemical residue or misses hard-to-reach areas like the back corners and door hinges. Our professional cleaning team arrives with the right products, the right tools, and the experience to clean your oven thoroughly and safely, without damaging the oven surfaces or leaving chemical residues.",
+        text: "Store-bought oven cleaners require proper application time, protective equipment, and thorough rinsing. DIY oven cleaning often leaves a chemical residue or misses hard-to-reach areas like the back corners and door hinges. Our professional cleaning team arrives with the right products, the right tools, and the experience to clean your oven thoroughly and safely.",
       },
+      { type: "heading", text: "Same-Day Oven Cleaning Available:" },
       {
         type: "para",
         text: "Moving out fast? We offer same-day oven and appliance cleaning as a standalone service or as part of a full bond clean. Just contact us on WhatsApp and we'll do our best to fit you in.",
@@ -347,16 +369,63 @@ function renderContent(content: ContentBlock[]) {
 export default function ServicesPage() {
   return (
     <div>
+      <SEOMeta
+        title="Bond Cleaning Services Perth | End of Lease, Carpet, Oven & More – Tru Bond Cleaning"
+        description="Explore all bond cleaning services in Perth by Tru Bond Cleaning. General bond clean, kitchen deep clean, carpet steam cleaning, oven cleaning, bathroom clean, and window cleaning — all with a 100% bond back guarantee."
+        keywords="bond cleaning services Perth, carpet steam cleaning Perth, oven cleaning Perth, kitchen deep clean Perth, window cleaning Perth, end of lease services Perth"
+        ogImage="/assets/generated/end-of-lease-cleaning-perth.dim_800x500.jpg"
+        canonicalUrl="https://trubondcleaningbrisbane.com/services"
+      />
+
       {/* Page Header */}
       <section className="bg-brand-dark text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-display font-black mb-4">
             Our Bond Cleaning Services in Perth
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg max-w-2xl mx-auto mb-6">
             Complete end-of-lease cleaning services to help you get your full
             bond back. Every service is backed by our 100% satisfaction
             guarantee.
+          </p>
+        </div>
+      </section>
+
+      {/* Services intro */}
+      <section className="bg-secondary/40 py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-3 gap-6 text-center">
+            <div className="p-5 bg-card rounded-2xl shadow-card">
+              <p className="font-display font-black text-3xl text-brand-teal mb-1">
+                500+
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Bond Cleans Completed
+              </p>
+            </div>
+            <div className="p-5 bg-card rounded-2xl shadow-card">
+              <p className="font-display font-black text-3xl text-brand-teal mb-1">
+                100%
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Bond Back Guarantee
+              </p>
+            </div>
+            <div className="p-5 bg-card rounded-2xl shadow-card">
+              <p className="font-display font-black text-3xl text-brand-teal mb-1">
+                REIWA
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Standard Checklist
+              </p>
+            </div>
+          </div>
+          <p className="text-center text-muted-foreground mt-6 max-w-2xl mx-auto">
+            Every service we offer follows the REIWA end-of-lease inspection
+            standards. Our cleaners undergo ongoing training, carry public
+            liability insurance, and hold current national police clearances.
+            All pricing is all-inclusive and transparent — no hidden extras on
+            the day.
           </p>
         </div>
       </section>

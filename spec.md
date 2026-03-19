@@ -1,28 +1,31 @@
 # Tru Bond Cleaning Perth
 
 ## Current State
-New project — no existing pages or content.
+Four main pages exist (Home, Services, About, Contact) plus suburb pages. Pages have ~400 words, some images, basic meta tags, and a Google site verification tag. Images exist for hero, kitchen, carpet, bathroom, bond-back-guarantee, and window cleaning.
 
 ## Requested Changes (Diff)
 
 ### Add
-- Multi-page website: Home, Services, About, Contact
-- Home page: hero, services overview, why choose us, FAQ (12 questions), CTA
-- Services page: individual 400-word descriptions for each bond cleaning service
-- Contact page: WhatsApp link (0488841883) + form that opens customer's mail client to send to hidden email
-- Branding images with alt text on every page
-- Full SEO: title tags, meta descriptions, Open Graph tags, Google site verification meta tag
-- FAQ answers covering all 12 questions including top 5 companies list, product links
-- 3000+ words of semantically optimised, skimmable, active-voice content in Australian English (Year 5 reading level)
-- Google site verification: LGBPb31c8y91eig9pACZt2fDChSQQ7xZzPNGeQE7mlU
+- New branded images on every page (team, end-of-lease, bathroom bond clean, carpet steam clean, oven cleaning, window cleaning, contact banner, bond guarantee certificate)
+- All images must have descriptive SEO alt text including location keywords
+- Expand content on every page to ~1000 words per page, semantically optimised, skimmable (H2/H3 headings, bullet points, short paragraphs)
+- Content must demonstrate E-E-A-T: Experience, Expertise, Authoritativeness, Trustworthiness
+- Full SEO meta tags on every page: title, meta description, keywords, Open Graph (og:title, og:description, og:image, og:url), Twitter card, canonical URL
+- Google site verification meta tag on all pages
+- Page description / structured content sections: credentials, years of experience, guarantee, testimonials callout
 
 ### Modify
-N/A
+- HomePage: expand hero copy, add credentials bar, add more detailed service descriptions, expand FAQ to 1000 words, add trust signals section with images
+- ServicesPage: expand each service to detailed 150+ word descriptions with images and benefits bullets
+- AboutPage: expand story, team credentials, certifications, process, values to 1000 words with team image
+- ContactPage: add contact page banner image, expand copy with trust signals
 
 ### Remove
-N/A
+- Nothing removed
 
 ## Implementation Plan
-1. Generate branding hero, services, and team images
-2. Generate minimal Motoko backend
-3. Build full React frontend with all pages, SEO meta tags, content, FAQ, contact form using mailto: link
+1. Update index.html with global SEO defaults and Google verification tag
+2. Update HomePage.tsx: add full meta tags via react-helmet or inline, add images with alt text, expand content to 1000 words
+3. Update ServicesPage.tsx: add service images with alt text, expand each service description, add meta tags
+4. Update AboutPage.tsx: add team image, expand story/credentials/process to 1000 words, add meta tags
+5. Update ContactPage.tsx: add contact banner image, expand trust copy, add meta tags

@@ -1,3 +1,4 @@
+import SEOMeta from "@/components/SEOMeta";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import {
   Accordion,
@@ -9,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "@tanstack/react-router";
 import {
+  Award,
+  CheckCircle,
   ChevronRight,
   Clock,
   DollarSign,
@@ -25,13 +28,14 @@ const services = [
     summary:
       "We clean your entire rental from top to bottom — every room, every surface, every corner. Our detailed checklist follows REIWA standards so your inspection goes smoothly.",
     image: "/assets/generated/hero-bond-cleaning-perth.dim_1200x600.jpg",
-    imageAlt: "Professional bond cleaning team in Perth – Tru Bond Cleaning",
+    imageAlt:
+      "Professional bond cleaning team in Perth – Tru Bond Cleaning end of lease service",
   },
   {
     title: "Kitchen Deep Clean",
     summary:
       "Grease, grime, and burnt-on residue — we tackle it all. Our kitchen clean covers the oven, rangehood, stovetop, cupboards, benches, and sink until they sparkle.",
-    image: "/assets/generated/kitchen-cleaning-perth.dim_800x500.jpg",
+    image: "/assets/generated/end-of-lease-cleaning-perth.dim_800x500.jpg",
     imageAlt:
       "Professional kitchen bond cleaning service in Perth by Tru Bond Cleaning",
   },
@@ -39,31 +43,33 @@ const services = [
     title: "Bathroom & Toilet Clean",
     summary:
       "We remove soap scum, mould, limescale, and stains from tiles, shower screens, toilets, and vanities. We leave every bathroom spotless and inspection-ready.",
-    image: "/assets/generated/bathroom-cleaning-perth.dim_800x500.jpg",
+    image: "/assets/generated/bond-clean-bathroom-perth.dim_800x500.jpg",
     imageAlt:
-      "Sparkling clean bathroom after Tru Bond Cleaning Perth bond clean",
+      "Spotless bathroom after professional bond clean in Perth by Tru Bond Cleaning",
   },
   {
     title: "Carpet Steam Cleaning",
     summary:
       "Our hot water extraction steam cleaning removes deep-set stains, odours, and allergens. Most Perth leases require professional carpet cleaning — we've got you covered.",
-    image: "/assets/generated/carpet-cleaning-perth.dim_800x500.jpg",
-    imageAlt: "Professional carpet steam cleaning Perth – Tru Bond Cleaning",
+    image: "/assets/generated/carpet-steam-clean-perth.dim_800x500.jpg",
+    imageAlt:
+      "Professional carpet steam cleaning Perth – Tru Bond Cleaning end of lease service",
   },
   {
     title: "Window Cleaning",
     summary:
       "Streak-free, crystal-clear windows — inside and out. We clean glass, tracks, frames, and fly screens so your property makes the best impression at inspection.",
-    image: "/assets/generated/window-cleaning-perth.dim_800x500.jpg",
-    imageAlt: "Window cleaning service Perth – Tru Bond Cleaning end of lease",
+    image: "/assets/generated/window-bond-clean-perth.dim_800x500.jpg",
+    imageAlt:
+      "Professional window cleaning Perth as part of bond clean – Tru Bond Cleaning",
   },
   {
     title: "Oven & Appliance Cleaning",
     summary:
       "The oven is the hardest part of any bond clean. We disassemble, soak, scrub, and polish every part until it looks brand new — microwave, rangehood, and dishwasher too.",
-    image: "/assets/generated/kitchen-cleaning-perth.dim_800x500.jpg",
+    image: "/assets/generated/oven-cleaning-perth.dim_800x500.jpg",
     imageAlt:
-      "Professional oven and appliance cleaning Perth by Tru Bond Cleaning",
+      "Professional oven and appliance cleaning Perth by Tru Bond Cleaning bond experts",
   },
 ];
 
@@ -100,6 +106,34 @@ const whyChoose = [
   },
 ];
 
+const processSteps = [
+  {
+    step: "1",
+    title: "Free Quote",
+    desc: "Tell us your property details and we send you a fixed price quote — no obligation.",
+  },
+  {
+    step: "2",
+    title: "Booking Confirmed",
+    desc: "Choose your date. We confirm within the hour and send a reminder before the job.",
+  },
+  {
+    step: "3",
+    title: "Cleaners Arrive On Time",
+    desc: "Our fully equipped, police-checked team arrives at your property on schedule.",
+  },
+  {
+    step: "4",
+    title: "REIWA-Standard Full Clean",
+    desc: "We work through every room using our detailed REIWA inspection checklist.",
+  },
+  {
+    step: "5",
+    title: "Bond Back Guarantee Covers You",
+    desc: "If your agent finds anything we missed, we return within 72 hours at no extra cost.",
+  },
+];
+
 const faqs = [
   {
     q: "What is Bond Cleaning and Why is it Required?",
@@ -131,7 +165,7 @@ const faqs = [
   },
   {
     q: "What Products Are Best for Bond Cleaning Carpets?",
-    a: "When it comes to carpet cleaning during a bond clean, steam cleaning is the gold standard. Here are the best products and equipment used by professionals:\n\n• Bissell ProHeat 2X Revolution (bissell.com/en-au) — A powerful carpet cleaner for deep stains\n• Kärcher Puzzi Carpet Cleaner (karcher.com/au) — Professional-grade injection-extraction cleaner\n• Rug Doctor Carpet Cleaner — Available for hire at major Perth supermarkets\n• Woolite Carpet & Upholstery Cleaner (woolite.com.au) — Gentle formula safe for wool and delicate fibres\n\nFor the best results, always hire a professional carpet steam cleaner as part of your bond clean.",
+    a: "When it comes to carpet cleaning during a bond clean, steam cleaning is the gold standard. Here are the best products and equipment used by professionals:\n\n• Bissell ProHeat 2X Revolution — A powerful carpet cleaner for deep stains\n• Kärcher Puzzi Carpet Cleaner — Professional-grade injection-extraction cleaner\n• Rug Doctor Carpet Cleaner — Available for hire at major Perth supermarkets\n• Woolite Carpet & Upholstery Cleaner — Gentle formula safe for wool and delicate fibres\n\nFor the best results, always hire a professional carpet steam cleaner as part of your bond clean.",
   },
   {
     q: "How Do I Choose a Reliable Bond Cleaner?",
@@ -146,7 +180,7 @@ const faqs = [
     a: "In Perth, professional cleaners typically charge between $40 and $60 per hour for general cleaning. Bond cleaning and end-of-lease cleaning often has a flat fee rather than an hourly rate, as the job scope is fixed.\n\nFor a better deal, always ask for a fixed quote rather than paying by the hour — that way, you know the total cost upfront and there are no surprises if the job takes longer than expected.",
   },
   {
-    q: "How Much is End-of-Lease Cleaning in Australia? How Much to Pay a Cleaner for 3 Hours? What is the 20-Minute Rule in Cleaning?",
+    q: "How Much is End-of-Lease Cleaning in Australia?",
     a: "End-of-lease cleaning costs in Australia typically range from $250 to $800+ depending on property size and location. Perth is generally in line with the national average.\n\nFor a 3-hour clean, expect to pay between $120 and $180 at standard rates of $40–$60/hour. However, for a bond clean, a single 3-hour session is rarely enough to clean an entire rental property properly. Most bond cleans take 4–12 hours depending on the size and condition of the home.\n\nThe 20-minute rule in cleaning is a popular time-management tip: focus intensely on one task or room for 20 minutes, then move on. Professional cleaners use structured systems to clean efficiently, but a thorough bond clean goes far beyond the 20-minute rule — every surface must be spotless.",
   },
 ];
@@ -164,6 +198,14 @@ const stagger = {
 export default function HomePage() {
   return (
     <div>
+      <SEOMeta
+        title="Bond Cleaning Perth | Tru Bond Cleaning – 100% Bond Back Guarantee"
+        description="Perth's most trusted bond cleaners. Tru Bond Cleaning Perth offers end-of-lease cleaning with a 100% bond back guarantee, police-checked cleaners, and same-day bookings across all Perth suburbs."
+        keywords="bond cleaning Perth, end of lease cleaning Perth, vacate cleaning Perth, exit cleaning Perth, bond cleaners Perth"
+        ogImage="/assets/generated/hero-bond-cleaning-perth.dim_1200x600.jpg"
+        canonicalUrl="https://trubondcleaningbrisbane.com/"
+      />
+
       {/* Hero */}
       <section
         className="relative min-h-[600px] flex items-center"
@@ -172,7 +214,7 @@ export default function HomePage() {
         <div className="absolute inset-0 overflow-hidden">
           <img
             src="/assets/generated/hero-bond-cleaning-perth.dim_1200x600.jpg"
-            alt="Professional bond cleaning team in Perth – Tru Bond Cleaning"
+            alt="Professional bond cleaning team in Perth – Tru Bond Cleaning end of lease service"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-brand-dark/70" />
@@ -230,6 +272,85 @@ export default function HomePage() {
             <span>&#10003; Police-Checked Cleaners</span>
             <span>&#10003; Eco-Friendly Products</span>
             <span>&#10003; Trusted by 500+ Perth Renters</span>
+          </div>
+        </div>
+      </section>
+
+      {/* About intro */}
+      <section className="py-16 bg-white" aria-labelledby="trusted-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              variants={stagger}
+            >
+              <motion.h2
+                id="trusted-heading"
+                variants={fadeUp}
+                className="text-3xl sm:text-4xl font-display font-black mb-4"
+              >
+                Perth&apos;s Most Trusted Bond Cleaning Company
+              </motion.h2>
+              <motion.p
+                variants={fadeUp}
+                className="text-muted-foreground mb-4 leading-relaxed"
+              >
+                Tru Bond Cleaning Perth has helped over 500 Perth renters get
+                their full bond back. We have been cleaning rental properties
+                across the Perth metro area for years, and we know exactly what
+                real estate agents and property managers expect at an
+                inspection.
+              </motion.p>
+              <motion.p
+                variants={fadeUp}
+                className="text-muted-foreground mb-4 leading-relaxed"
+              >
+                Every cleaner on our team is police-checked, fully trained, and
+                covered by public liability insurance. We use our own
+                professional-grade, eco-friendly cleaning products — you
+                don&apos;t need to provide a thing.
+              </motion.p>
+              <motion.p
+                variants={fadeUp}
+                className="text-muted-foreground mb-4 leading-relaxed"
+              >
+                Our cleaning checklist follows the Real Estate Institute of
+                Western Australia (REIWA) standards. That means we clean the way
+                property managers inspect — room by room, surface by surface,
+                with nothing left to chance.
+              </motion.p>
+              <motion.ul variants={fadeUp} className="space-y-2">
+                {[
+                  "500+ bonds successfully returned to Perth renters",
+                  "REIWA-standard room-by-room checklist",
+                  "Police-checked, fully insured cleaners",
+                  "Eco-friendly, professional-grade products",
+                  "100% bond back guarantee — free return within 72 hours",
+                ].map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-start gap-2 text-sm text-foreground"
+                  >
+                    <CheckCircle className="w-4 h-4 text-brand-teal mt-0.5 shrink-0" />
+                    {point}
+                  </li>
+                ))}
+              </motion.ul>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <img
+                src="/assets/generated/end-of-lease-cleaning-perth.dim_800x500.jpg"
+                alt="End of lease cleaning Perth kitchen by Tru Bond Cleaning professionals"
+                className="w-full rounded-2xl shadow-cta"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -302,8 +423,71 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Our Process */}
+      <section className="py-20 bg-white" aria-labelledby="process-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="text-center mb-12"
+          >
+            <motion.h2
+              id="process-heading"
+              variants={fadeUp}
+              className="text-3xl sm:text-4xl font-display font-black mb-3"
+            >
+              Our Bond Cleaning Process – Step by Step
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="text-muted-foreground max-w-xl mx-auto"
+            >
+              We make bond cleaning simple. Here is exactly what happens when
+              you book with Tru Bond Cleaning Perth.
+            </motion.p>
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
+          >
+            {processSteps.map((s) => (
+              <motion.div
+                key={s.step}
+                variants={fadeUp}
+                className="flex flex-col items-center text-center p-5 bg-secondary/40 rounded-2xl"
+              >
+                <div className="w-12 h-12 rounded-full bg-brand-teal flex items-center justify-center text-white font-black text-xl mb-3">
+                  {s.step}
+                </div>
+                <h3 className="font-display font-bold text-sm mb-1">
+                  {s.title}
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {s.desc}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center text-muted-foreground mt-8 max-w-2xl mx-auto"
+          >
+            From your first message to your bond being returned, we are with you
+            every step of the way. Our process is designed to be simple,
+            transparent, and stress-free.
+          </motion.p>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
-      <section className="py-20" data-ocid="why-choose.section">
+      <section className="py-20 bg-secondary/30" data-ocid="why-choose.section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -320,11 +504,21 @@ export default function HomePage() {
               </motion.h2>
               <motion.p
                 variants={fadeUp}
-                className="text-muted-foreground mb-8"
+                className="text-muted-foreground mb-4"
               >
-                We&apos;re not just another cleaning company. We&apos;re Perth
+                We&apos;re not just another cleaning company. We are Perth
                 renters&apos; most trusted partner for getting their bond back
                 in full.
+              </motion.p>
+              <motion.p
+                variants={fadeUp}
+                className="text-muted-foreground mb-6"
+              >
+                We know Perth&apos;s rental market inside out. We know what
+                Fremantle property managers check. We know what Joondalup real
+                estate agents focus on. Our expertise comes from years of
+                hands-on experience cleaning hundreds of Perth rental properties
+                — from studio apartments to large family homes.
               </motion.p>
               <motion.div
                 variants={stagger}
@@ -334,7 +528,7 @@ export default function HomePage() {
                   <motion.div
                     key={item.title}
                     variants={fadeUp}
-                    className="flex items-start gap-3 p-4 rounded-xl bg-secondary/50"
+                    className="flex items-start gap-3 p-4 rounded-xl bg-white"
                   >
                     <div className="shrink-0 w-9 h-9 rounded-lg bg-brand-teal/10 flex items-center justify-center">
                       <item.icon className="w-5 h-5 text-brand-teal" />
@@ -358,12 +552,46 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
             >
               <img
-                src="/assets/generated/bond-back-guarantee-perth.dim_800x500.jpg"
-                alt="100% bond back guarantee from Tru Bond Cleaning Perth"
+                src="/assets/generated/bond-back-guarantee-certificate.dim_800x500.jpg"
+                alt="Tru Bond Cleaning Perth 100% bond back guarantee certificate"
                 className="w-full rounded-2xl shadow-cta"
               />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Credentials bar */}
+      <section
+        className="py-12 bg-brand-dark text-white"
+        aria-label="Credentials and trust signals"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={stagger}
+            className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
+          >
+            {[
+              { icon: Award, label: "REIWA-Standard Checklist" },
+              { icon: Shield, label: "Fully Insured & Police-Checked" },
+              { icon: Star, label: "500+ Bonds Returned" },
+              { icon: Leaf, label: "Eco-Friendly Products" },
+            ].map((item) => (
+              <motion.div
+                key={item.label}
+                variants={fadeUp}
+                className="flex flex-col items-center gap-2"
+              >
+                <item.icon className="w-8 h-8 text-brand-teal-light" />
+                <span className="text-sm font-semibold text-white/90">
+                  {item.label}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 

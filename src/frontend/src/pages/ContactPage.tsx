@@ -1,3 +1,4 @@
+import SEOMeta from "@/components/SEOMeta";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -10,7 +11,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import {
+  Award,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Shield,
+  Star,
+} from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -49,6 +57,30 @@ const suburbs = [
   "Canning Vale",
   "Gosnells",
   "Armadale",
+];
+
+const trustPoints = [
+  {
+    icon: Shield,
+    text: "100% Bond Back Guarantee — we return free within 72 hours if anything is missed",
+  },
+  {
+    icon: Star,
+    text: "Trusted by 500+ Perth renters who got their full bond back",
+  },
+  { icon: Award, text: "Police-checked, fully insured cleaners on every job" },
+  {
+    icon: Award,
+    text: "REIWA-standard cleaning checklist used on every property",
+  },
+  {
+    icon: Shield,
+    text: "Same-day and weekend bookings available across Perth",
+  },
+  {
+    icon: Star,
+    text: "Transparent, all-inclusive pricing — no hidden fees on the day",
+  },
 ];
 
 const fadeUp = {
@@ -97,27 +129,42 @@ export default function ContactPage() {
 
     const subject = encodeURIComponent(`Bond Clean Quote Request from ${name}`);
     const mailtoHref = `mailto:humptydumptybondcleaning@gmail.com?subject=${subject}&body=${body}`;
-
     window.location.href = mailtoHref;
   };
 
   return (
     <div>
-      {/* Header */}
-      <section className="bg-brand-dark text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <SEOMeta
+        title="Contact Tru Bond Cleaning Perth | Get a Free Bond Clean Quote Today"
+        description="Get in touch with Tru Bond Cleaning Perth for a free, no-obligation bond cleaning quote. Chat on WhatsApp, call, or use our quick enquiry form. Same-day bookings available across all Perth suburbs."
+        keywords="contact bond cleaning Perth, bond clean quote Perth, book bond cleaning Perth, Tru Bond Cleaning contact"
+        ogImage="/assets/generated/contact-tru-bond-perth.dim_800x400.jpg"
+        canonicalUrl="https://trubondcleaningbrisbane.com/contact"
+      />
+
+      {/* Hero Banner */}
+      <section className="relative bg-brand-dark text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="/assets/generated/contact-tru-bond-perth.dim_800x400.jpg"
+            alt="Contact Tru Bond Cleaning Perth for a free bond cleaning quote"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
           <h1 className="text-4xl sm:text-5xl font-display font-black mb-4">
             Contact Tru Bond Cleaning Perth
           </h1>
           <p className="text-white/80 text-lg max-w-xl mx-auto">
-            Getting in touch is easy. Choose the option that works best for you.
+            Getting in touch is easy. Chat on WhatsApp for the fastest response,
+            or fill in our form below for a free quote.
           </p>
         </div>
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left: WhatsApp + Info */}
+          {/* Left: WhatsApp + Trust + Info */}
           <motion.div initial="hidden" animate="show" variants={stagger}>
             {/* WhatsApp CTA */}
             <motion.div
@@ -145,6 +192,36 @@ export default function ContactPage() {
                 <Phone className="w-4 h-4" />
                 <span className="font-semibold">0488 841 883</span>
               </div>
+            </motion.div>
+
+            {/* Trust signals */}
+            <motion.div variants={fadeUp} className="mb-8">
+              <h2 className="text-2xl font-display font-black mb-4">
+                Why Perth Renters Choose Us
+              </h2>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                When you book with Tru Bond Cleaning Perth, you are booking with
+                a team that has successfully returned bonds for over 500 Perth
+                renters. We show up on time, we clean to REIWA inspection
+                standards, and we stand behind every job with our 100% bond back
+                guarantee.
+              </p>
+              <p className="text-muted-foreground mb-5 leading-relaxed">
+                Every cleaner on our team is police-checked and fully insured.
+                We do not use sub-contractors — the same trusted team is on your
+                job from start to finish. You deal directly with the business
+                owner, not a call centre.
+              </p>
+              <ul className="space-y-3">
+                {trustPoints.map((point) => (
+                  <li key={point.text} className="flex items-start gap-3">
+                    <point.icon className="w-5 h-5 text-brand-teal mt-0.5 shrink-0" />
+                    <span className="text-sm text-foreground">
+                      {point.text}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
 
             {/* Service Area */}
